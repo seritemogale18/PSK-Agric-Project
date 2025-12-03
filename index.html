@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PSK Agric | Trusted Poultry Supplier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg-dark: #0B1A0F;
+      --color-bg-card: rgba(25, 45, 30, 0.65);
+      --color-bg-dropdown: #0a150d;
+      --color-text: #E2E8F0;
+      --color-text-light: #CBD5E1;
+      --color-primary: #4CAF50;
+      --color-accent: #FFD600;
+      --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 12px rgba(76, 175, 80, 0.2);
+      --radius: 16px;
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--color-text);
+      background-color: var(--color-bg-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 50% 120%, rgba(11, 26, 15, 0.92), transparent 60%),
+        url('https://images.unsplash.com/photo-1706458188457-eef5713b72e9?w=1920&auto=format&fit=crop&q=70&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNoaWNrc3xlbnwwfHwwfHx8MA%3D%3D');
+      background-size: 102% 102%;
+      background-position: center 30%;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      animation: bgFloat 18s ease-in-out infinite alternate;
+      will-change: background-position, background-size;
+    }
+    @keyframes bgFloat {
+      0%, 100% { background-position: center 30%; background-size: 102% 102%; }
+      33% { background-position: center 28%; background-size: 103% 103%; }
+      66% { background-position: center 32%; background-size: 101% 101%; }
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-text);
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+    .section { padding: 6rem 0; position: relative; }
+    .section-title { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+    .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--color-accent); }
+    .section-title p { font-size: 1.125rem; color: var(--color-text-light); font-weight: 300; }
+    .text-h1 { font-size: 3rem; line-height: 1.1; font-weight: 700; }
+    .text-h2 { font-size: 2.25rem; }
+    .text-h3 { font-size: 1.75rem; }
+    .text-h4 { font-size: 1.375rem; }
+    .text-body { font-size: 1rem; line-height: 1.6; font-weight: 300; }
+    .text-sm { font-size: 0.875rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1.75rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      font-size: 1rem;
+      backdrop-filter: blur(4px);
+    }
+    .btn-primary {
+      background: var(--color-accent);
+      color: var(--color-bg-dark);
+      box-shadow: var(--shadow-glow);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 6px 20px rgba(255, 214, 0, 0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--color-accent);
+      border: 2px solid var(--color-accent);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 214, 0, 0.1);
+      transform: translateY(-2px);
+    }
+    .btn-order {
+      background: var(--color-accent);
+      color: var(--color-bg-dark);
+      font-weight: 700;
+      font-size: 1.125rem;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      box-shadow: var(--shadow-glow);
+    }
+    header {
+      background: rgba(11, 26, 15, 0.8);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(76, 175, 80, 0.2);
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+    }
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .nav-links a:not(.dropdown-toggle) {
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: 500;
+      transition: color 0.2s;
+      padding: 0.5rem 0;
+    }
+    .nav-links a:not(.dropdown-toggle):hover {
+      color: var(--color-accent);
+      background: transparent;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-toggle {
+      color: var(--color-text);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .dropdown-toggle:hover {
+      background: rgba(76, 175, 80, 0.15);
+      color: var(--color-accent);
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--color-bg-dropdown);
+      min-width: 220px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      border-radius: var(--radius);
+      z-index: 101;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(76, 175, 80, 0.2);
+      overflow: hidden;
+    }
+    .dropdown-content a {
+      color: var(--color-text-light);
+      padding: 0.875rem 1.25rem;
+      text-decoration: none;
+      display: block;
+      transition: all 0.2s;
+      font-size: 0.95rem;
+    }
+    .dropdown-content a:hover {
+      background: rgba(76, 175, 80, 0.1);
+      color: var(--color-accent);
+      padding-left: 1.5rem;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--color-text);
+    }
+    .hero {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 2.5rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .hero-text {
+      max-width: 600px;
+    }
+    .hero-image-box {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4), var(--shadow-glow);
+      animation: float 6s ease-in-out infinite, bounceIn 0.8s ease-out forwards;
+      transform-origin: center;
+      will-change: transform;
+    }
+    .hero-image-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(25, 45, 30, 0.4), transparent);
+      z-index: 1;
+      border-radius: inherit;
+    }
+    .hero-image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: brightness(1.05) saturate(1.1);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-10px) scale(1.01); }
+    }
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+      40% { transform: scale(1.05) translateY(-10px); }
+      60% { transform: scale(0.98) translateY(0); }
+      80% { transform: scale(1.01) translateY(-2px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .product-img {
+      height: 180px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      animation: bounceIn 0.7s ease-out forwards, float 8s ease-in-out infinite;
+      animation-delay: calc(0.1s * var(--delay, 0));
+      will-change: transform, opacity;
+      position: relative;
+    }
+    .stock-label {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: white;
+      background: rgba(76, 175, 80, 0.85);
+      z-index: 2;
+    }
+    .rare-label {
+      background: rgba(255, 214, 0, 0.9);
+      color: var(--color-bg-dark);
+    }
+    .why-image {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-light);
+      animation: float 10s ease-in-out infinite, pulse 4s ease-in-out infinite;
+      will-change: transform;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 10px 30px rgba(0,0,0,0.4), var(--shadow-glow); }
+      50% { box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 20px rgba(255, 214, 0, 0.3); }
+    }
+    .card {
+      background: var(--color-bg-card);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-light);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(76, 175, 80, 0.2);
+      transition: var(--transition);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), var(--shadow-glow);
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .product-info h3 { color: white; margin-bottom: 0.5rem; }
+    .product-price {
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin: 0.5rem 0;
+    }
+    .pricing-section {
+      background: rgba(5, 15, 8, 0.4);
+      padding: 6rem 0;
+    }
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .pricing-header h2 {
+      font-size: 2.5rem;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+    }
+    .pricing-header p {
+      font-size: 1.125rem;
+      color: var(--color-text-light);
+      font-weight: 300;
+    }
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .pricing-card {
+      background: var(--color-bg-card);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-light);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(76, 175, 80, 0.2);
+      transition: var(--transition);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), var(--shadow-glow);
+    }
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), transparent);
+      z-index: 0;
+    }
+    .pricing-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .pricing-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin: 1rem 0;
+      position: relative;
+      z-index: 1;
+    }
+    .pricing-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .pricing-btn {
+      background: var(--color-accent);
+      color: var(--color-bg-dark);
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      box-shadow: var(--shadow-glow);
+      transition: var(--transition);
+      position: relative;
+      z-index: 1;
+    }
+    .pricing-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 6px 20px rgba(255, 214, 0, 0.4);
+    }
+    .services-section {
+      background: rgba(5, 15, 8, 0.4);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .service-card {
+      background: var(--color-bg-card);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-light);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(76, 175, 80, 0.2);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 6px; height: 100%;
+      background: var(--color-accent);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5), var(--shadow-glow);
+    }
+    .service-icon {
+      width: 56px; height: 56px;
+      background: rgba(76, 175, 80, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .service-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: var(--color-accent);
+    }
+    .service-features {
+      margin: 1.25rem 0;
+      padding-left: 1.25rem;
+    }
+    .service-features li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .feature-card { text-align: center; padding: 1.5rem; }
+    .feature-icon {
+      width: 60px; height: 60px;
+      background: rgba(76, 175, 80, 0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;
+    }
+    .feature-icon svg { width: 32px; height: 32px; fill: var(--color-accent); }
+    .content-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .stats {
+      display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 3rem;
+    }
+    .stat-number { font-size: 2.5rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.25rem; }
+    .stat-label { color: var(--color-text-light); font-size: 1rem; }
+    .contact-section {
+      background: var(--color-bg-card);
+      border-radius: var(--radius);
+      padding: 3rem;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 214, 0, 0.15);
+    }
+    footer {
+      background: rgba(5, 15, 8, 0.9);
+      color: var(--color-text-light);
+      padding: 3rem 0 2rem;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(76, 175, 80, 0.1);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 992px) {
+      .hero-content { grid-template-columns: 1fr; text-align: center; }
+      .hero-text { margin: 0 auto; }
+      .hero-buttons { justify-content: center; }
+      .hero-image-box { max-width: 500px; margin: 2rem auto 0; }
+      .content-pair { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: block; }
+      .nav-links {
+        position: fixed;
+        top: 70px; left: 0; right: 0;
+        background: rgba(11, 26, 15, 0.95);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+        backdrop-filter: blur(10px);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        z-index: 99;
+      }
+      .nav-links.active { transform: translateY(0); }
+      .dropdown { width: 100%; }
+      .dropdown-toggle {
+        display: block;
+        padding: 0.75rem;
+        text-align: left;
+        width: 100%;
+        border-radius: 8px;
+      }
+      .dropdown-content {
+        position: static;
+        display: none;
+        box-shadow: none;
+        border: none;
+        background: rgba(30, 55, 40, 0.5);
+        margin-top: 0.5rem;
+      }
+      .dropdown.active .dropdown-content { display: block; }
+      .dropdown-content a { padding: 0.75rem 1rem; }
+      .section { padding: 3rem 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="logo">PSK Agric</a>
+        <button class="mobile-menu-btn" id="menuToggle">☰</button>
+        <div class="nav-links" id="navLinks">
+          <a href="#products">Products</a>
+          <a href="#why">Why Us</a>
+          <a href="#contact">Contact</a>
+          <div class="dropdown" id="servicesDropdown">
+            <a href="#services" class="dropdown-toggle">Services ▾</a>
+            <div class="dropdown-content">
+              <a href="#incubation">Incubation & Hatching</a>
+              <a href="#vaccination">Vaccination & Health</a>
+              <a href="#housing">Poultry Housing Setup</a>
+              <a href="#feed">Feed Consultation</a>
+              <a href="#training">Poultry Training</a>
+              <a href="#delivery">Delivery Service</a>
+              <a href="#custom">Custom Orders</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <section class="hero fade-in" id="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="text-h1">Healthy Chicks. Happy Farmers.</h1>
+        <div class="hero-subtitle">From Hatch to Harvest — PSK Agric Delivers.</div>
+        <p class="text-body">
+          Premium broiler chicks, feed, vaccines & delivery — trusted by farmers across the region.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/27818679378?text=Hello%20PSK%20Agric%2C%20I%27d%20like%20to%20place%20an%20order!" class="btn btn-order floating"> 📦 Order Now </a>
+          <a href="#products" class="btn btn-outline">View Products</a>
+        </div>
+      </div>
+      <div class="hero-image-box">
+        <img 
+          src="https://images.unsplash.com/photo-1588433548732-cfaca6a7022f?w=500&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNoaWNrc3xlbnwwfHwwfHx8MA%3D%3D" 
+          alt="Fluffy day-old broiler chicks in a clean tray"
+        >
+      </div>
+    </div>
+  </section>
+  <section class="section fade-in">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Your Farm Deserves the Best</h2>
+        <p>Quality starts at day one — with healthy, resilient chicks and reliable support.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z" /></svg>
+          </div>
+          <h3 class="text-h3">Lightning Fast Growth</h3>
+          <p class="text-body">Genetically selected for optimal feed conversion.</p>
+        </div>
+        <div class="feature-card card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg>
+          </div>
+          <h3 class="text-h3">Health-First Approach</h3>
+          <p class="text-body">Vaccinated & health-checked. 98%+ survival rate.</p>
+        </div>
+        <div class="feature-card card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M11,9H13V15H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,15H13V17H11V15Z" /></svg>
+          </div>
+          <h3 class="text-h3">Farmer-Centric Support</h3>
+          <p class="text-body">Free consultation — anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section fade-in" id="products" style="background: rgba(5, 15, 8, 0.4);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Premium Products</h2>
+        <p>Everything for a thriving flock — from day one to harvest.</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card card fade-in">
+          <div class="product-img" style="--delay: 1;">
+            <img src="https://images.unsplash.com/photo-1546272989-40c92939c6c2?w=500&auto=format&fit=crop&q=75&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpY2tzfGVufDB8fDB8fHww" alt="Day-old broiler chicks">
+            <span class="stock-label">IN STOCK</span>
+          </div>
+          <div class="product-info">
+            <h3 class="text-h3">Day-Old Broiler Chicks</h3>
+            <p class="text-body">Vaccinated, healthy, and ready to grow.</p>
+            <div class="product-price">R12.50 each</div>
+            <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20Day-Old%20Chicks" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card card fade-in">
+          <div class="product-img" style="--delay: 2;">
+            <img src="https://images.unsplash.com/photo-1589922583749-6b8473a85048?w=500&auto=format&fit=crop&q=75&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnJvaWxlciUyMGNoaWNrZW58ZW58MHx8MHx8fDA%3D" alt="Grown broilers">
+            <span class="stock-label">IN STOCK</span>
+          </div>
+          <div class="product-info">
+            <h3 class="text-h3">Grown Broilers</h3>
+            <p class="text-body">Ready for slaughter — uniform weight.</p>
+            <div class="product-price">R100 each</div>
+            <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20Grown%20Broilers" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card card fade-in">
+          <div class="product-img" style="--delay: 3;">
+            <img src="https://images.unsplash.com/photo-1641357497181-94a7ce5a3d7b?w=500&auto=format&fit=crop&q=75&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHNhY2t8ZW58MHx8MHx8fDA%3D" alt="Poultry feed sack">
+            <span class="stock-label">IN STOCK</span>
+          </div>
+          <div class="product-info">
+            <h3 class="text-h3">Poultry Feed</h3>
+            <p class="text-body">Starter, Grower, Finisher — 40kg bags.</p>
+            <div class="product-price">From R400</div>
+            <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20Poultry%20Feed" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card card fade-in">
+          <div class="product-img" style="--delay: 4;">
+            <img src="https://plus.unsplash.com/premium_photo-1668487827017-836a5d3b1728?w=500&auto=format&fit=crop&q=75&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2NpbmV8ZW58MHx8MHx8fDA%3D" alt="Poultry vaccines">
+            <span class="stock-label">IN STOCK</span>
+          </div>
+          <div class="product-info">
+            <h3 class="text-h3">Vaccines</h3>
+            <p class="text-body">Newcastle, Gumboro, IB — essential protection.</p>
+            <div class="product-price">From R50</div>
+            <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20Vaccines" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card card fade-in">
+          <div class="product-img" style="--delay: 5;">
+            <img src="https://media.istockphoto.com/id/2228234877/photo/happy-silkie-chicks-sustainably-raised-in-free-range-chicken-coop-domestic-chicken-on-small.jpg?s=612x612&w=0&k=20&c=apNlrvZdcTjXDaPbZ6ZQv8iD4DeRahiGNf5w3lu5RHo=" alt="Silkie chicks — fluffy, black-skinned ornamental breed" loading="lazy">
+            <span class="stock-label">IN STOCK</span>
+          </div>
+          <div class="product-info">
+            <h3 class="text-h3">Silkie Chicks</h3>
+            <p class="text-body">Fluffy, docile, and ornamental — perfect for small farms or backyard flocks.</p>
+            <div class="product-price">R35 each</div>
+            <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20Silkie%20Chicks" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card card fade-in">
+          <div class="product-img" style="--delay: 6;">
+            <img src="https://media.istockphoto.com/id/693757980/photo/young-polish-chicken.webp?s=1024x1024&w=is&k=20&c=Q0eTdox0zngFL5rWyrNl7ZhtoSaw98m2w85Yoowin_k=" alt="Polish chicks with crests" loading="lazy">
+            <span class="stock-label">IN STOCK</span>
+          </div>
+          <div class="product-info">
+            <h3 class="text-h3">Polish Chicks</h3>
+            <p class="text-body">Distinctive crested heads and elegant plumage — prized for show & charm.</p>
+            <div class="product-price">R30 each</div>
+            <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20Polish%20Chicks" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card card fade-in">
+          <div class="product-img" style="--delay: 7;">
+            <img src="https://images.pexels.com/photos/162331/chicks-chicken-small-poultry-162331.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=1" alt="Brahma chicks — large and feathered legs" loading="lazy">
+            <span class="stock-label">IN STOCK</span>
+          </div>
+          <div class="product-info">
+            <h3 class="text-h3">Brahma Chicks</h3>
+            <p class="text-body">Gentle giants — cold-hardy, calm, and excellent layers of large brown eggs.</p>
+            <div class="product-price">R40 each</div>
+            <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20Brahma%20Chicks" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card card fade-in">
+          <div class="product-img" style="--delay: 8;">
+            <img src="https://images.unsplash.com/photo-1554481608-1951303b5789?w=500&auto=format&fit=crop&q=75&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJsYWNrJTIwZXhvdGljJTIwY2hpY2tzfGVufDB8fDB8fHww" alt="Ayam Cemani chicks — all-black rare breed" loading="lazy">
+            <span class="stock-label rare-label">RARE LIMITED</span>
+          </div>
+          <div class="product-info">
+            <h3 class="text-h3">Ayam Cemani Chicks</h3>
+            <p class="text-body">The ‘Lamborghini of chickens’ — all-black, rare, and highly sought-after.</p>
+            <div class="product-price">R200 each</div>
+            <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20Ayam%20Cemani%20Chicks" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card card fade-in">
+          <div class="product-img" style="--delay: 9;">
+            <img src="https://images.pexels.com/photos/20118288/pexels-photo-20118288.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=1" alt="Barred Rock chicks — black and white striped" loading="lazy">
+            <span class="stock-label">IN STOCK</span>
+          </div>
+          <div class="product-info">
+            <h3 class="text-h3">Silver Laced Wyondotte</h3>
+            <p class="text-body">Hardy, reliable layers — classic American heritage breed with striking plumage.</p>
+            <div class="product-price">R1600 each</div>
+            <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20Barred%20Rock%20Chicks" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card card fade-in">
+          <div class="product-img" style="--delay: 10;">
+            <img src="https://media.istockphoto.com/id/1459429021/photo/pair-of-thoroughbred-chickens-with-beautiful-plumage.jpg?s=612x612&w=0&k=20&c=McxRY6uJyPGt52OUEC3-nLBXpy1N6W6KVh0Ua9xmAIw=" alt="Mature Koekoek hens — South African hardy, high-producing dual-purpose birds" loading="lazy">
+            <span class="stock-label">IN STOCK</span>
+          </div>
+          <div class="product-info">
+            <h3 class="text-h3">Mature Koekoek Hens</h3>
+            <p class="text-body">Local favorite — hardy, heat-tolerant, and top-tier layers.</p>
+            <div class="product-price">R180 each</div>
+            <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20Mature%20Koekoek%20Hens" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card card fade-in">
+          <div class="product-img" style="--delay: 11;">
+            <img src="https://images.unsplash.com/photo-1573512870580-ee059e5d7cfa?w=500&auto=format&fit=crop&q=75&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA4fHxBdXN0cmFsb3JwJTIwY2hpY2tlbnxlbnwwfHwwfHx8MA%3D%3D" alt="Mature Australorp hen — glossy black, calm, record egg layers" loading="lazy">
+            <span class="stock-label">IN STOCK</span>
+          </div>
+          <div class="product-info">
+            <h3 class="text-h3">Lohmann Brown hens</h3>
+            <p class="text-body">Record-holding layers (300+ eggs/year), calm temperament.</p>
+            <div class="product-price">R170 each</div>
+            <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20Mature%20Australorp%20Hens" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">Order Now</a>
+          </div>
+        </div>
+        <div class="product-card card fade-in">
+          <div class="product-img" style="--delay: 12;">
+            <img src="https://media.istockphoto.com/id/2244640878/photo/close-up-of-an-orpington-chicken-on-a-wooden-ladder.webp?a=1&b=1&s=612x612&w=0&k=20&c=LFChjMmzWkXJst0bFcmpUpZ4HkAYO5tbQnODr6_pDKk=" alt="Mature Orpington hen — fluffy, friendly, cold-hardy dual-purpose breed" loading="lazy">
+            <span class="stock-label rare-label">RARE LIMITED</span>
+          </div>
+          <div class="product-info">
+            <h3 class="text-h3">Mature Orpington Hens</h3>
+            <p class="text-body">Gentle giants — great for families, cold-hardy, and excellent for eggs & meat.</p>
+            <div class="product-price">R1900 each</div>
+            <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20Mature%20Orpington%20Hens" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pricing-section fade-in" id="pricing">
+    <div class="container">
+      <div class="pricing-header">
+        <h2>Simple, Transparent Packages</h2>
+        <p>For every farmer — with bulk discounts.</p>
+      </div>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <h3 class="pricing-title">Starter</h3>
+          <div class="pricing-price">50 chicks — R625</div>
+          <p class="pricing-desc">Perfect for backyard growers and testing a new line.</p>
+          <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20the%20Starter%20Package" class="btn pricing-btn">Order Package</a>
+        </div>
+        <div class="pricing-card">
+          <h3 class="pricing-title">Farmer</h3>
+          <div class="pricing-price">100 chicks — R1,250</div>
+          <p class="pricing-desc">Ideal for small commercial operations — includes vaccination.</p>
+          <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20the%20Farmer%20Package" class="btn pricing-btn">Order Package</a>
+        </div>
+        <div class="pricing-card">
+          <h3 class="pricing-title">Bulk</h3>
+          <div class="pricing-price">400 chicks — R4,500</div>
+          <p class="pricing-desc">Best value for larger runs — delivery available (ask for a quote).</p>
+          <a href="https://wa.me/27818679378?text=I%20want%20to%20order%20the%20Bulk%20Package" class="btn pricing-btn">Order Package</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section services-section fade-in" id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Professional Poultry Services</h2>
+        <p>We help you succeed — from setup to scale.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-in" id="incubation">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V8H5V5H19M19,19H5V11H19V19M7,13V17H9V13H7M11,13V17H13V13H11M15,13V17H17V13H15Z" /></svg>
+          </div>
+          <h3 class="text-h3">Incubation & Hatching</h3>
+          <p class="text-body">Bulk or event-based hatching with guaranteed high success rate.</p>
+          <ul class="service-features">
+            <li>• Bulk egg incubation</li>
+            <li>• Wedding & event chicks</li>
+            <li>• On-demand hatching</li>
+          </ul>
+          <a href="https://wa.me/27818679378?text=I%20need%20Incubation%20%26%20Hatching%20Services" class="btn btn-primary">Book Service</a>
+        </div>
+        <div class="service-card fade-in" id="vaccination">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12,18.17L8.83,15L7.42,16.41L12,21L21,12L19.59,10.59M12,6A6,6 0 0,1 18,12C18,14.36 16.65,16.29 14.73,17.29L14.71,17.28L12,20L12.29,17.3C10.36,16.29 9,14.36 9,12A6,6 0 0,1 15,6C15,7.66 13.66,9 12,9C10.34,9 9,7.66 9,6C9,4.34 10.34,3 12,3C13.66,3 15,4.34 15,6Z" /></svg>
+          </div>
+          <h3 class="text-h3">Vaccination & Health Programs</h3>
+          <p class="text-body">Full-cycle disease prevention and on-site veterinary support.</p>
+          <ul class="service-features">
+            <li>• Custom vaccination plans</li>
+            <li>• On-farm health checks</li>
+            <li>• Medicines & supplements</li>
+          </ul>
+          <a href="https://wa.me/27818679378?text=I%20need%20Vaccination%20%26%20Health%20Programs" class="btn btn-primary">Book Service</a>
+        </div>
+        <div class="service-card fade-in" id="housing">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12,3L1,12H3V20H9V14H15V20H21V12H23L12,3M5,12V16H7V12H5M9,12V18H7V16H5V12H3L12,4.5L21,12H19V16H17V12H15V16H13V18H11V12H9Z" /></svg>
+          </div>
+          <h3 class="text-h3">Poultry Housing Setup</h3>
+          <p class="text-body">Design & build coops for optimal growth and disease control.</p>
+          <ul class="service-features">
+            <li>• Brooder setup (0–3 weeks)</li>
+            <li>• Heating & lighting systems</li>
+            <li>• Ventilation & biosecurity</li>
+          </ul>
+          <a href="https://wa.me/27818679378?text=I%20need%20Poultry%20Housing%20Setup" class="btn btn-primary">Book Service</a>
+        </div>
+        <div class="service-card fade-in" id="feed">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4C7.59,4 4,7.59 4,12C4,16.41 7.59,20 12,20C16.41,20 20,16.41 20,12C20,7.59 16.41,4 12,4M12.5,7V12.25L17,14.9L16.25,16.15L11.5,13.35V7H12.5Z" /></svg>
+          </div>
+          <h3 class="text-h3">Feed & Feeding Consultation</h3>
+          <p class="text-body">Maximize growth & survival with science-backed feeding programs.</p>
+          <ul class="service-features">
+            <li>• Starter/Grower/Finisher plans</li>
+            <li>• Weekly ration schedules</li>
+            <li>• Common feed mistakes to avoid</li>
+          </ul>
+          <a href="https://wa.me/27818679378?text=I%20need%20Feed%20%26%20Feeding%20Consultation" class="btn btn-primary">Book Service</a>
+        </div>
+        <div class="service-card fade-in" id="training">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg>
+          </div>
+          <h3 class="text-h3">Poultry Farming Training</h3>
+          <p class="text-body">Hands-on workshops for beginners and small-scale farmers.</p>
+          <ul class="service-features">
+            <li>• Broiler & layer management</li>
+            <li>• Disease identification</li>
+            <li>• Feed/water ratios & records</li>
+          </ul>
+          <a href="https://wa.me/27818679378?text=I%20want%20Poultry%20Farming%20Training" class="btn btn-primary">Book Training</a>
+        </div>
+        <div class="service-card fade-in" id="delivery">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M2,7.5L12,2L22,7.5L12,13L2,7.5M12,23L5.5,19.26V10.02L12,6.29L18.5,10.02V19.26L12,23M5.5,17L12,20.71L18.5,17V12.71L12,9L5.5,12.71V17Z" /></svg>
+          </div>
+          <h3 class="text-h3">Delivery Service</h3>
+          <p class="text-body">Safe, timely delivery across Limpopo.</p>
+          <ul class="service-features">
+            <li>• Polokwane, Mankweng, Seshego</li>
+            <li>• Moletjie, Turfloop & more</li>
+            <li>• Live & packaged options</li>
+          </ul>
+          <a href="https://wa.me/27818679378?text=I%20need%20Delivery%20to%20%5BLocation%5D" class="btn btn-primary">Request Delivery</a>
+        </div>
+        <div class="service-card fade-in" id="custom">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,17H13V15H11V17M11,7H13V13H11V7Z" /></svg>
+          </div>
+          <h3 class="text-h3">Custom Orders</h3>
+          <p class="text-body">Tailored for events, restaurants, ceremonies & suppliers.</p>
+          <ul class="service-features">
+            <li>• Themed chick events</li>
+            <li>• Restaurant & hotel supply</li>
+            <li>• Processed or live options</li>
+          </ul>
+          <a href="https://wa.me/27818679378?text=I%20need%20a%20Custom%20Order%20for%20%5BEvent%2FRestaurant%5D" class="btn btn-primary">Discuss Custom Order</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section fade-in" id="why">
+    <div class="container">
+      <div class="content-pair">
+        <div>
+          <h2 class="text-h2">Why Farmers Trust PSK Agric</h2>
+          <p class="text-body" style="margin: 1.5rem 0;">
+            We’re partners in your success — with hands-on experience and real solutions.
+          </p>
+          <div class="stats">
+            <div class="stat-item">
+              <div class="stat-number">100+</div>
+              <div class="stat-label">Farms Served</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">98%</div>
+              <div class="stat-label">Chick Survival</div>
+            </div>
+          </div>
+          <div class="card" style="margin-top: 2rem; background: rgba(30, 60, 40, 0.5);">
+            <p class="text-body">
+              <em>“PSK’s chicks have a 98% survival rate on my farm...”</em>
+            </p>
+            <p style="margin-top: 0.75rem; font-weight: 600; color: var(--color-accent);">— Local Farmer, Limpopo</p>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <img 
+            src="https://images.unsplash.com/photo-1597085016110-6a14bdfd7507?w=500&auto=format&fit=crop&q=75&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFwcHklMjBmYXJtZXJzJTIwYW5kJTIwY2hpY2tzfGVufDB8fDB8fHww"
+            alt="Happy farmer holding chicks"
+            class="why-image"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section fade-in" id="contact">
+    <div class="container">
+      <div class="contact-section">
+        <h2 class="text-h2">Ready to Grow Your Flock?</h2>
+        <p class="text-body">Contact us today for a free consultation and quote.</p>
+        <div style="margin: 2rem 0; font-size: 1.1rem;">
+          📍 Moletjie Motinti &nbsp; | &nbsp; 📞 081 867 9378 &nbsp; | &nbsp; 📧 info@pskagric.co.za
+        </div>
+        <div class="hero-buttons">
+          <a href="https://wa.me/27818679378?text=Hello%20PSK%20Agric!" class="btn btn-order"> WhatsApp Order </a>
+          <a href="tel:+27818679378" class="btn btn-outline"> Call Now </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p class="text-sm">© 2025 PSK Agric. Your Trusted Partner in Poultry Success.</p>
+      <p class="text-sm" style="opacity: 0.7; margin-top: 0.5rem;">Healthy Chicks. Happy Farmers.</p>
+    </div>
+  </footer>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const servicesDropdown = document.getElementById('servicesDropdown');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    servicesDropdown.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        servicesDropdown.classList.toggle('active');
+      }
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const target = document.querySelector(targetId);
+          if (target) {
+            window.scrollTo({ 
+              top: target.offsetTop - 80, 
+              behavior: 'smooth' 
+            });
+            navLinks.classList.remove('active');
+            if (servicesDropdown.classList.contains('active')) {
+              servicesDropdown.classList.remove('active');
+            }
+          }
+        }
+      });
+    });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
